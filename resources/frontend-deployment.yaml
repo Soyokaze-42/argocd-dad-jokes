@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: dad-jokes-frontend
+  name: dad-jokes-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dad-jokes-frontend
+  template:
+    metadata:
+      labels:
+        app: dad-jokes-frontend
+    spec:
+      containers:
+      - image: ghcr.io/soyokaze-42/dad-jokes-frontend:latest
+        name: dad-jokes-frontend
+        resources: {}

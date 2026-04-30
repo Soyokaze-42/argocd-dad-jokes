@@ -1,0 +1,12 @@
+project: default
+source:
+  repoURL: https://github.com/Soyokaze-42/argocd-dad-jokes.git
+  path: resources/
+  targetRevision: main
+destination:
+  server: https://kubernetes.default.svc
+  namespace: dad-jokes
+syncPolicy:
+  automated:
+    prune: true
+    selfHeal: true

@@ -1,0 +1,14 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: dad-jokes-frontend
+spec:
+  host: dad-jokes-frontend-dad-jokes.apps-crc.testing
+  port:
+    targetPort: 8080
+  tls:
+    termination: edge
+  to:
+    kind: Service
+    name: dad-jokes-frontend
+    weight: 100

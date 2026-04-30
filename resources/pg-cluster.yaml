@@ -1,0 +1,20 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: joke-cluster
+spec:
+  instances: 1
+
+  bootstrap:
+    initdb:
+      database: dada-base
+      owner: dad
+      secret: 
+        name: db-user
+      postInitApplicationSQLRefs:
+        configMapRefs:
+        - name: post-init-sql-configmap
+          key: configmap.sql
+
+  storage:
+    size: 128Mi

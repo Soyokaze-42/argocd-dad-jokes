@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: dad-jokes-api
+  name: api-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dad-jokes-api
+  template:
+    metadata:
+      labels:
+        app: dad-jokes-api
+    spec:
+      containers:
+      - image: ghcr.io/soyokaze-42/dad-jokes-api:latest
+        name: dad-jokes-api
+        ports:
+        - containerPort: 3000
+        volumeMounts:
+        - name: annoying-vol-that-should-be-a-string
+          mountPath: "/run/secrets/dadabase"
+          readOnly: true
+        env:
+        - name: REDIS_URL
+          value: "redis://redis:6379"
+        - name: DB_HOST
+          value: joke-cluster-rw
+        - name: DB_PORT
+          value: "5432"
+        - name: DB_PASSWORD_FILE
+          value: "/run/secrets/dadabase/password"
+        - name: DB_USER
+          valueFrom:
+            secretKeyRef:
+              name: db-user
+              key: username
+        - name: DB_NAME
+          value: dada-base
+      volumes:
+      - name: annoying-vol-that-should-be-a-string
+        secret:
+          secretName: db-user
