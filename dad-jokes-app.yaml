@@ -11,10 +11,8 @@ spec:
     targetRevision: main
   destination:
     server: https://kubernetes.default.svc
-    namespace: dad-jokes
+    namespace: argocd-demo
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
