@@ -4,6 +4,8 @@ metadata:
   name: post-init-sql-configmap
 data:
   configmap.sql: |
+    SET ROLE app;
+
     CREATE TABLE IF NOT EXISTS jokes (
       id SERIAL PRIMARY KEY,
       setup TEXT NOT NULL UNIQUE,
