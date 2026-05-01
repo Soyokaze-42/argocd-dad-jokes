@@ -25,7 +25,7 @@ spec:
           readOnly: true
         livenessProbe:
           httpGet:
-            path: /health
+            path: /api/health
             port: 3000
           initialDelaySeconds: 15 # Wait 15s before starting probes
           periodSeconds: 10       # How often to check
