@@ -7,6 +7,8 @@ spec:
 
   bootstrap:
     initdb:
+      database: app
+      owner: app
       postInitApplicationSQLRefs:
         configMapRefs:
         - name: post-init-sql-configmap
