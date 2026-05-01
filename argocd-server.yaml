@@ -28,7 +28,8 @@ spec:
       openShiftOAuth: true
     provider: dex
   rbac:
-    policy: 'g, kubeadmin, role:admin'
+    policy: |
+      'g, kubeadmin, role:admin'
   repo:
     resources:
       limits:
