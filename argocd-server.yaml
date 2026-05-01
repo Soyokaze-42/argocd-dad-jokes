@@ -29,7 +29,7 @@ spec:
     provider: dex
   rbac:
     policy: |
-      'p, developer:kubeadmin, role:admin'
+      g, kubeadmin, role:admin
     scopes: '[groups]'
   repo:
     resources:
