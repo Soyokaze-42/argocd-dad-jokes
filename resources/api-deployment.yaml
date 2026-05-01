@@ -23,6 +23,15 @@ spec:
         - name: annoying-vol-that-should-be-a-string
           mountPath: "/run/secrets/dadabase"
           readOnly: true
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 3000
+          initialDelaySeconds: 15 # Wait 15s before starting probes
+          periodSeconds: 10       # How often to check
+          timeoutSeconds: 1      # Max time to wait for a response
+          failureThreshold: 3    # Restart after 3 failed attempts
+
         env:
         - name: REDIS_URL
           value: "redis://redis:6379"
