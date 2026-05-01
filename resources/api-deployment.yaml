@@ -30,7 +30,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: joke-cluster-app
-              key: hostname
+              key: host
         - name: DB_PORT
           valueFrom:
             secretKeyRef:
@@ -44,7 +44,10 @@ spec:
               name: joke-cluster-app
               key: username
         - name: DB_NAME
-          value: dada-base
+          valueFrom:
+            secretKeyRef:
+              name: joke-cluster-app
+              key: dbname
       volumes:
       - name: annoying-vol-that-should-be-a-string
         secret:
