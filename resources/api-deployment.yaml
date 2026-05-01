@@ -32,6 +32,7 @@ spec:
               name: joke-cluster-app
               key: hostname
         - name: DB_PORT
+          valueFrom:
             secretKeyRef:
               name: joke-cluster-app
               key: port
