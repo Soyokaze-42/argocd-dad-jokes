@@ -30,7 +30,7 @@ spec:
   rbac:
     policy: |
       g, kubeadmin, role:admin
-    scopes: '[groups]'
+    scopes: '[groups, profile]'
   repo:
     resources:
       limits:
