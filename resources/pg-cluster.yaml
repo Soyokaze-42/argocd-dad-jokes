@@ -7,8 +7,6 @@ spec:
 
   bootstrap:
     initdb:
-      database: dada-base
-      owner: dad
       postInitApplicationSQLRefs:
         configMapRefs:
         - name: post-init-sql-configmap

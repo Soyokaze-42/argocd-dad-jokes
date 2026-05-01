@@ -16,9 +16,8 @@ crc start
 5) Install the CloudNativePG Operator from the Ecosystem -> Software Catalog menu
 6) Install the ArgoCD Operator from the same Catalog
 7) create the argocd namespace `oc new-project argocd-demo`
-
-oneliner:
-`curl -s https://raw.githubusercontent.com/Soyokaze-42/argocd-dad-jokes/refs/heads/main/dad-jokes-app.yaml | oc apply -f -`
+8) create and configure the ArgoCD server `curl -s https://raw.githubusercontent.com/Soyokaze-42/argocd-dad-jokes/refs/heads/main/argocd-server.yaml | oc apply -f -`
+9) create the ArgoCD Application `curl -s https://raw.githubusercontent.com/Soyokaze-42/argocd-dad-jokes/refs/heads/main/dad-jokes-app.yaml | oc apply -f -`
 
 All the resources to deploy this app are in the resources directory. This is referenced in the dad-jokes-app.yaml ArgoCD Application manifest.
 
