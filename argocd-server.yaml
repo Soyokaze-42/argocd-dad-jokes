@@ -29,7 +29,7 @@ spec:
     provider: dex
   rbac:
     policy: |
-      'g, kubeadmin, role:admin'
+      g, kubeadmin, role:admin
   repo:
     resources:
       limits:
