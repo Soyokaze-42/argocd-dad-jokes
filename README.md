@@ -14,7 +14,8 @@ crc start
 3) When it is ready, log into the webapp with the kubeadm credentials you get after starting crc.
 4) Setup oc and log in on the CLI with the developer credentials (instructions for this are also provided when crc starts)
 5) Install the CloudNativePG Operator from the Ecosystem -> Software Catalog menu
-6) Install the ArgoCD Operator from the same Catalog, with `sso.dex.OpenShift OAuth Enabled` set to true 
+6) Install the ArgoCD Operator from the same Catalog
+7) create the argocd namespace `oc new-project argocd-demo`
 
 oneliner:
 `curl -s https://raw.githubusercontent.com/Soyokaze-42/argocd-dad-jokes/refs/heads/main/dad-jokes-app.yaml | oc apply -f -`

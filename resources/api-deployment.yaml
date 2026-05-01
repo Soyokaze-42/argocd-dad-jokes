@@ -27,19 +27,24 @@ spec:
         - name: REDIS_URL
           value: "redis://redis:6379"
         - name: DB_HOST
-          value: joke-cluster-rw
+          valueFrom:
+            secretKeyRef:
+              name: joke-cluster-app
+              key: hostname
         - name: DB_PORT
-          value: "5432"
+            secretKeyRef:
+              name: joke-cluster-app
+              key: port
         - name: DB_PASSWORD_FILE
           value: "/run/secrets/dadabase/password"
         - name: DB_USER
           valueFrom:
             secretKeyRef:
-              name: db-user
+              name: joke-cluster-app
               key: username
         - name: DB_NAME
           value: dada-base
       volumes:
       - name: annoying-vol-that-should-be-a-string
         secret:
-          secretName: db-user
+          secretName: joke-cluster-app

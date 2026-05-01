@@ -9,8 +9,6 @@ spec:
     initdb:
       database: dada-base
       owner: dad
-      secret: 
-        name: db-user
       postInitApplicationSQLRefs:
         configMapRefs:
         - name: post-init-sql-configmap
