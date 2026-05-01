@@ -9,6 +9,8 @@ spec:
     initdb:
       database: app
       owner: app
+      secret:
+        name: joke-cluster-app
       postInitApplicationSQLRefs:
         configMapRefs:
         - name: post-init-sql-configmap
