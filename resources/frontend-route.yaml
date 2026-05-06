@@ -3,7 +3,6 @@ kind: Route
 metadata:
   name: dad-jokes-frontend
 spec:
-  host: dad-jokes-frontend-dad-jokes.apps-crc.testing
   port:
     targetPort: 8080
   tls:
